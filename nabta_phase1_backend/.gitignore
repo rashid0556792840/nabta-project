@@ -1,0 +1,11 @@
+target/
+.env
+.idea/
+.vscode/
+*.iml
+.DS_Store
+# Firebase client config for local Android builds
+android/app/google-services.json
+# Never include Firebase Admin service-account private keys in source control
+**/nabta-firebase-admin.json
+**/*firebase*service-account*.json

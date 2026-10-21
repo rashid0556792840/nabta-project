@@ -1,0 +1,28 @@
+{
+  "name": "nabta-mobile-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "cap:sync": "npm run build && cap sync android",
+    "cap:android": "cap open android",
+    "android:add": "cap add android",
+    "android:sync": "cap sync android",
+    "android:run": "cap run android",
+    "android:doctor": "cap doctor"
+  },
+  "dependencies": {
+    "@capacitor/core": "7.6.9",
+    "@capacitor/push-notifications": "7.0.7",
+    "@ionic/core": "8.8.19"
+  },
+  "devDependencies": {
+    "@capacitor/android": "7.6.9",
+    "@capacitor/cli": "7.6.9",
+    "typescript": "5.9.3",
+    "vite": "6.4.4"
+  }
+}

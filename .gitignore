@@ -1,0 +1,58 @@
+﻿# Secrets and environment files
+.env
+.env.*
+!.env.example
+!.env.production.example
+**/service-account*.json
+**/firebase-admin*.json
+**/credentials*.json
+**/id_rsa
+**/*.jks
+**/*.keystore
+
+# Java / Maven
+**/target/
+**/*.class
+
+# Node.js
+**/node_modules/
+
+# Frontend build output
+**/dist/
+
+# Android / Gradle generated files
+**/.gradle/
+**/.idea/
+**/build/
+**/local.properties
+**/captures/
+
+# IDE and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local databases and logs
+*.log
+*.sqlite
+*.sqlite3
+
+# Generated archives and packaged applications
+*.war
+*.jar
+*.apk
+*.aab
+
+# Project backup archives
+nabta_phase1_backend.zip
+nabta_phase2_frontend.zip
+scripts.zip
+
+# Unrelated DBMS assignment files
+DBMS  Project- Notice.pdf
+GroupB13 DBMS Project Phase 1 Report.pdf
+
+nabta_phase2_frontend/android/app/google-services.json
+
+nabta_phase2_frontend/android/gradle/wrapper/gradle-8.11.1-bin.zip

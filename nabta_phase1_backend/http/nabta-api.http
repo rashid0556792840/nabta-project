@@ -1,0 +1,42 @@
+@base = http://localhost:8080
+@token = PUT_TOKEN_HERE
+
+### Health
+GET {{base}}/api/health
+
+### Register customer
+POST {{base}}/api/auth/register
+Content-Type: application/json
+
+{"name":"Test Customer","email":"customer@example.com","password":"CustomerPass123!"}
+
+### Login
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{"email":"owner@nabta.local","password":"PUT_ADMIN_PASSWORD_HERE"}
+
+### Public products
+GET {{base}}/api/products?page=0&size=20
+
+### Create category (admin)
+POST {{base}}/api/admin/categories
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"name":"Plants","description":"Indoor and outdoor plants","active":true}
+
+### Create product (admin; set categoryId to the ID returned above)
+POST {{base}}/api/admin/products
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"name":"Snake Plant","description":"Indoor plant","price":19.99,"categoryId":1,"stockQuantity":20,"active":true}
+
+### Place order (customer token required; use a new idempotency UUID per intended order)
+POST {{base}}/api/orders
+Authorization: Bearer {{token}}
+Idempotency-Key: 52f7d9c9-9a48-41e9-a76d-2f7e2c500000
+Content-Type: application/json
+
+{"items":[{"productId":1,"quantity":1}],"deliveryAddress":"Test address","contactPhone":"+911234567890","notes":"","paymentMethod":"CASH_ON_DELIVERY"}

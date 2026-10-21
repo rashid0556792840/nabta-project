@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#356b4c" />
+  <meta name="description" content="Nabta Food Company — browse our food, herbs, spices and pantry catalogue." />
+  <title>Nabta Food Company | Product Catalogue</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+      <div id="nabtaWelcomeScreen" class="nabta-welcome-screen" role="status" aria-live="polite">
+        <div class="nabta-welcome-card">
+          <img src="/assets/nabta-logo.png" alt="Nabta company logo" class="nabta-welcome-logo" />
+          <h1 id="nabtaWelcomeTitle">Welcome to Nabta Food Company</h1>
+          <p id="nabtaWelcomeMessage">Quality you trust. Flavours that bring us together.</p>
+          <span class="nabta-welcome-leaf" aria-hidden="true">✦</span>
+        </div>
+      </div>
+      <header class="topbar">
+        <div class="top-company-name"><span class="top-company-plant" aria-hidden="true">🌱</span><span id="topCompanyName">Nabta Food Company</span></div>
+        <div class="top-actions">
+          <button class="icon-btn" id="languageButton" title="Change language">عربي</button>
+          <button class="account-button" id="accountButton" type="button" aria-label="Sign in"><span id="accountInitial" class="login-door-mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v16h-6"/><path d="M3 12h12m-4-4 4 4-4 4"/></svg></span><span id="accountLabel">Sign in</span></button>
+          <button class="top-logout hidden" id="topLogoutButton" type="button" data-i18n="logout">Sign out</button>
+        </div>
+      </header>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class="nav-brand" href="#home" data-nav="home" aria-label="Nabta Food Company home">
+          <span class="nav-wordmark">NABTA FOOD COMPANY</span>
+          <span class="nav-logo-fallback" aria-hidden="true">🌿</span>
+          <img class="company-logo" src="/assets/nabta-logo.png" alt="Nabta logo" onerror="if(!this.dataset.tryJpg){this.dataset.tryJpg='1';this.src='/assets/nabta-logo.jpg';}else{this.style.display='none';this.previousElementSibling.style.display='inline-flex';}" />
+        </a>
+        <div class="primary-links">
+          <button class="nav-link active" data-nav="home" data-i18n="home">Home</button>
+          <div id="primaryCategoryLinks" class="primary-category-links" aria-label="Product categories"></div>
+          <button class="nav-link" data-nav="categories" data-i18n="categories">Categories</button>
+          <button class="nav-link admin-nav hidden" data-nav="admin" data-i18n="adminDashboard">Admin dashboard</button>
+          <button class="nav-link operations-nav hidden" data-nav="operations" data-i18n="operations">Operations</button>
+        </div>
+        <div class="primary-tools">
+          <button class="tool-button" id="settingsButton" type="button" title="Account settings" aria-label="Account settings"><span aria-hidden="true">⚙</span><span data-i18n="settingsLabel">Settings</span></button>
+          <button class="tool-button cart-tool" data-nav="cart" type="button"><span aria-hidden="true">🛒</span><span data-i18n="cart">Cart</span><b id="cartCount" class="count">0</b></button>
+        </div>
+      </nav>
+      <div class="layout">
+        <aside class="sidebar" aria-hidden="true">
+          <button class="nav-item active" data-nav="home"><span>⌂</span><span data-i18n="home">Home</span></button>
+          <button class="nav-item" data-nav="categories"><span>▦</span><span data-i18n="categories">Categories</span></button>
+          <button class="nav-item admin-nav hidden" data-nav="admin"><span>▧</span><span data-i18n="adminDashboard">Admin dashboard</span></button>
+          <button class="nav-item operations-nav hidden" data-nav="operations"><span>⇢</span><span data-i18n="operations">Operations</span></button>
+          <button id="whatsappButton" class="hidden" type="button">WhatsApp</button>
+        </aside>
+        <main id="view" class="main-view" tabindex="-1" aria-live="polite"></main>
+      </div>
+      <footer id="siteFooter" class="site-footer" aria-label="Company information"></footer>
+      <nav class="mobile-nav" aria-label="Main navigation">
+        <button data-nav="home" class="mobile-nav-item active"><span>⌂</span><small data-i18n="home">Home</small></button>
+        <button data-nav="categories" class="mobile-nav-item"><span>▦</span><small data-i18n="categories">Explore</small></button>
+        <button data-nav="cart" class="mobile-nav-item"><span>🛒</span><small data-i18n="cart">Cart</small></button>
+        <button data-nav="settings" class="mobile-nav-item"><span>⚙</span><small data-i18n="settingsLabel">Settings</small></button>
+        <button data-nav="operations" class="mobile-nav-item operations-nav hidden"><span>⇢</span><small data-i18n="operations">Operations</small></button>
+      </nav>
+      <div id="toastHost" class="toast-host" aria-live="polite"></div>
+      <div id="modalHost"></div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

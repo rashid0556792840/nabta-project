@@ -1,0 +1,2 @@
+package com.nabta.backend.model;
+public enum OrderStatus { PENDING, CONFIRMED, PROCESSING, OUT_FOR_DELIVERY, PARTIALLY_DELIVERED, COMPLETED, CANCELLED }
