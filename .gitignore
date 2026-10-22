@@ -26,12 +26,18 @@
 **/build/
 **/local.properties
 **/captures/
+nabta_phase2_frontend/android/gradle/wrapper/gradle-8.11.1-bin.zip
 
 # IDE and operating system files
 .vscode/
+.vs/
 .DS_Store
 Thumbs.db
 desktop.ini
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # Local databases and logs
 *.log
@@ -48,11 +54,11 @@ desktop.ini
 nabta_phase1_backend.zip
 nabta_phase2_frontend.zip
 scripts.zip
+**/*.backup
 
 # Unrelated DBMS assignment files
 DBMS  Project- Notice.pdf
 GroupB13 DBMS Project Phase 1 Report.pdf
 
+# Firebase configuration
 nabta_phase2_frontend/android/app/google-services.json
-
-nabta_phase2_frontend/android/gradle/wrapper/gradle-8.11.1-bin.zip
