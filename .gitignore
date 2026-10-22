@@ -62,3 +62,9 @@ GroupB13 DBMS Project Phase 1 Report.pdf
 
 # Firebase configuration
 nabta_phase2_frontend/android/app/google-services.json
+
+# Local-only files (not part of the upload)
+/*.png
+/*.svg
+/*.docx
+/README.md
