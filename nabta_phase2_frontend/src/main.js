@@ -323,8 +323,9 @@ function renderSettings() {
 function renderAdmin() {
   if (getUser()?.role !== 'ADMIN') { view.innerHTML = `<section class="page-heading"><h1>${t('adminTitle')}</h1></section>${emptyMarkup(t('adminOnly'),t('signInTitle'),`<button class="btn btn-primary" id="adminLogin">${t('signIn')}</button>`)}`; document.querySelector('#adminLogin')?.addEventListener('click',()=>openAuth('login')); return; }
   const tabs = [['dashboard',t('adminTitle')],['products',t('productsManagement')],['categories',t('categories')],['orders',t('orderManagement')],['inventory',t('inventory')],['users',t('usersManagement')],['company',t('companySettings')]];
-  view.innerHTML = `<section class="page-heading admin-heading"><div><span class="section-kicker">NABTA / ADMINISTRATION</span><h1>${t('adminTitle')}</h1><p>${t('adminTools')}</p></div><button class="btn btn-outline" id="adminRefresh">↻ ${t('refresh')}</button></section><div class="admin-tabs">${tabs.map(([id,label])=>`<button data-admin-tab="${id}" class="${state.adminTab===id?'active':''}">${escapeHtml(label)}</button>`).join('')}</div><div id="adminContent">${loadingMarkup()}</div>`;
+  view.innerHTML = `<section class="page-heading admin-heading"><div><span class="section-kicker">NABTA / ADMINISTRATION</span><h1>${t('adminTitle')}</h1><p>${t('adminTools')}</p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-outline" id="openJspCatalogue">📄 JSP Catalogue</button><button class="btn btn-outline" id="adminRefresh">↻ ${t('refresh')}</button></div></section><div class="admin-tabs">${tabs.map(([id,label])=>`<button data-admin-tab="${id}" class="${state.adminTab===id?'active':''}">${escapeHtml(label)}</button>`).join('')}</div><div id="adminContent">${loadingMarkup()}</div>`;
   document.querySelector('#adminRefresh')?.addEventListener('click',renderAdminData);
+    document.querySelector('#openJspCatalogue')?.addEventListener('click',()=>window.open(getApiBase().replace(/\/api$/,'')+'/academic/jsp/products','_blank'));
   renderAdminData();
 }
 async function renderAdminData() {
